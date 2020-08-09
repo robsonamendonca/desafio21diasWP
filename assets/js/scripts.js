@@ -1,6 +1,6 @@
 /*!
-    * Start Bootstrap - Freelancer v6.0.4 (https://startbootstrap.com/themes/freelancer)
-    * Copyright 2013-2020 Start Bootstrap
+    * Robson Mendonça - Freelancer v6.0.4 (https://startbootstrap.com/themes/freelancer)
+    * Copyright 2013-2020 Robson Mendonça
     * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-freelancer/blob/master/LICENSE)
     */
     (function($) {
