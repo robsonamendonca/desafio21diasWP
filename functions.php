@@ -8,3 +8,5 @@
  * @subpackage Desafio21Dias
  * @since Desafio21Dias
  */
+
+add_theme_support( 'post-thumbnails' );
