@@ -12,6 +12,24 @@
  get_header();
  $url = get_stylesheet_directory_uri();
 ?>
+<!-- Masthead-->
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <!-- Masthead Avatar Image-->
+        <img class="masthead-avatar mb-5" src="<?php echo $url;?>/assets/img/robson.png" alt="robsonamendonca" />
+        <!-- Masthead Heading-->
+        <h1 class="masthead-heading text-uppercase mb-0">Robson Mendonça</h1>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Masthead Subheading-->
+        <p class="masthead-subheading font-weight-light mb-0">Desenvolvedor Web, Consultor e Voluntário em São
+            Paulo, Brasil</p>
+    </div>
+</header>
 <!-- Portfolio Section-->
 <section class="page-section portfolio" id="portfolio">
     <div class="container">
@@ -112,10 +130,14 @@
             <?php           
                 $i++;
             }// end while
+            ?>
+            <a href="mais-itens" class="btn btn-primary" style="width:100%; text-align:center; display:inline;">Ver
+                Mais</a>
+            <?php
         }//
         else{ ?>
             <div class="text-center mt-4 alert alert-danger" role="alert">
-                <p >Nenhum post encontrado!</p>
+                <p>Nenhum post encontrado!</p>
             </div>
             <?php           
         }//end if
