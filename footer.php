@@ -55,7 +55,7 @@ $url = get_stylesheet_directory_uri();
 </div>
 <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
 <div class="scroll-to-top d-lg-none position-fixed">
-    <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i
+    <a class="js-scroll-trigger d-block text-center text-white rounded" href="<?php echo home_url();?>/#page-top"><i
             class="fa fa-chevron-up"></i></a>
 </div>
 
