@@ -36,7 +36,7 @@ if($the_query_post->have_posts()){  ?>
             <option value="500">500</option>
         </select>
     </form>
-    <hr/>
+    <hr />
     <p>Digite algo no campo abaixo para pesquisar títulos ou conteúdos na página corrente:</p>
     <input class="form-control" id="txtbusca" type="text" placeholder="Pesquisa...">
     <br>
@@ -58,12 +58,21 @@ if($the_query_post->have_posts()){  ?>
             <tr>
                 <th scope="row"><?php the_id();?></th>
                 <td>
-                    <div style="width:128px; height: 128px; overflow: hidden;">
-                        <?php the_post_thumbnail('thumbnail', array('class' => 'img-fluid', 'style'=>'width:100%'));?>
-                    </div>
+                    <a href="<?php echo get_permalink();?>">
+                        <div style="width:128px; height: 128px; overflow: hidden;">
+                            <?php the_post_thumbnail('thumbnail', array('class' => 'img-fluid', 'style'=>'width:100%'));?>
+                        </div>
+                    </a>
                 </td>
-                <td><?php the_title();?></td>
-                <td><?php the_content();?></td>
+                <td><a href="<?php echo get_permalink();?>">
+                        <?php the_title();?>
+                    </a>
+                </td>
+                <td>
+                    <a href="<?php echo get_permalink();?>">
+                        <?php the_content();?>
+                    </a>
+                </td>
             </tr>
             <?php           
                             
@@ -98,7 +107,6 @@ else{ ?>
 </div>
 </section>
 
-<?php get_footer();?>
 <script>
 $(document).ready(function() {
     $("#txtbusca").on("keyup", function() {
@@ -114,3 +122,5 @@ $(document).ready(function() {
 
 });
 </script>
+
+<?php get_footer();?>
