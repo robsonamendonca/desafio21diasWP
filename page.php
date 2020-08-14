@@ -24,6 +24,7 @@ if($the_query_post->have_posts()){  ?>
 <div class="container" style="margin-top: 150px;">
     <h2>Habilidades</h2>
     <p>Itens por páginas: <?php echo $posts_per_page; ?></p>
+    <?php if($paged <= 1){?>
     <form name="frmper_page" action="" method="post">
         <select class="custom-select d-block w-20" name="per_page" id="per_page" placeholder="Itens por pagina..."
             required="">
@@ -36,6 +37,7 @@ if($the_query_post->have_posts()){  ?>
             <option value="500">500</option>
         </select>
     </form>
+    <?php } ?>
     <hr />
     <p>Digite algo no campo abaixo para pesquisar títulos ou conteúdos na página corrente:</p>
     <input class="form-control" id="txtbusca" type="text" placeholder="Pesquisa...">
@@ -106,21 +108,5 @@ else{ ?>
 </div>
 </div>
 </section>
-
-<script>
-$(document).ready(function() {
-    $("#txtbusca").on("keyup", function() {
-        var value = $(this).val().toLowerCase();
-        $("#tabHabilidades tr").filter(function() {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-        });
-    });
-
-    $('#per_page').on('change', function() {
-        document.forms['frmper_page'].submit();
-    });
-
-});
-</script>
 
 <?php get_footer();?>
