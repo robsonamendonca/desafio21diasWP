@@ -131,7 +131,7 @@
                 $i++;
             }// end while
             ?>
-            <a href="mais-itens" class="btn btn-primary" style="width:100%; text-align:center; display:inline;">Ver
+            <a href="<?php echo home_url();?>/mais-itens" class="btn btn-primary" style="width:100%; text-align:center; display:inline;">Ver
                 Mais</a>
             <?php
         }//
