@@ -108,7 +108,9 @@
                                             <div class="divider-custom-line"></div>
                                         </div>
                                         <!-- Portfolio Modal - Image-->
-                                        <?php the_post_thumbnail('thumbnail', array('class' => 'img-fluid rounded mb-5')); ?>
+                                        <a href="<?php echo get_permalink();?>">
+                                            <?php the_post_thumbnail('thumbnail', array('class' => 'img-fluid rounded mb-5')); ?>
+                                        </a>
                                         <!-- Portfolio Modal - Text-->
                                         <p class="mb-5">
                                             <?php //the_content(); 
@@ -119,6 +121,7 @@
                                             <i class="fas fa-times fa-fw"></i>
                                             Fechar Janela
                                         </button>
+
                                     </div>
                                 </div>
                             </div>
@@ -131,7 +134,8 @@
                 $i++;
             }// end while
             ?>
-            <a href="<?php echo home_url();?>/mais-itens" class="btn btn-primary" style="width:100%; text-align:center; display:inline;">Ver
+            <a href="<?php echo home_url();?>/mais-itens" class="btn btn-primary"
+                style="width:100%; text-align:center; display:inline;">Ver
                 Mais</a>
             <?php
         }//
