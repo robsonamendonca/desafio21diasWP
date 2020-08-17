@@ -55,4 +55,4 @@ function custom_post_type_curriculo() {
 	register_post_type( 'cv_habilidades', $args );
 
 }
-add_action( 'init', 'custom_post_type_curriculo', 0 );
+add_action( 'init', 'custom_post_type_curriculo', 10 );

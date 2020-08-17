@@ -30,9 +30,18 @@ $template_escolaridade='<article>
 <p>#descricao</p>
 </article>';
 
-if( have_posts() ) :
-while ( have_posts() ) :
-    the_post(); 			
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$args = array(
+    'posts_per_page'=> 10,
+    'paged'  => $paged,
+    'post_type'     => 'cv_habilidades'
+);
+$the_query_post = new WP_Query($args);
+	
+ if ( $the_query_post->have_posts() ) : 
+    while (  $the_query_post->have_posts() ) : 
+		$the_query_post->the_post();  
+			
         if (get_field('secao')){
             $secao = get_field('secao')[0]; 
 		}  
@@ -97,14 +106,16 @@ else:?>
 endif;   
 ?>
 <!DOCTYPE html>
-<html>
+<html class="no-js" <?php language_attributes(); ?>>
 
 <head>
-    <title>Robson Mendonça - Curriculum Vitae</title>
+    <!-- O título -->
+    <title><?php wp_title(''); ?></title>
 
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content="Curriculum Vitae de Robson Mendonça." />
-    <meta charset="UTF-8">
+    <!-- O charset padrão -->
+    <meta charset="<?php bloginfo('charset'); ?>">
 
     <link type="text/css" rel="stylesheet" href="<?php echo $url;?>/assets/css/cv/style.css">
     <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
@@ -126,13 +137,15 @@ endif;
                 <img src="<?php echo $url;?>/assets/img/robson.png" alt="Robson Mendonça" />
             </div>
             <div id="name">
-                <h1 class="quickFade delayTwo"><?php echo $secao;?></h1>
-                <h2 class="quickFade delayThree"><?php the_title();?></h2>
+                <h1 class="quickFade delayTwo"><?php echo $nome;?></h1>
+                <h2 class="quickFade delayThree"><?php echo $profissao;?></h2>
             </div>
 
             <div id="contactDetails" class="quickFade delayFour">
                 <ul>
-					<li><a href="#" onclick="javascript:window.history.go(-1);"><< Voltar </a></li>
+                    <li>e: <a href="mailto:<?php echo $email;?>" target="_blank"><?php echo $email;?></a></li>
+                    <li>w: <a href="<?php echo $site;?>"><?php echo $site;?></a></li>
+                    <li>m: <?php echo $celular;?></li>
                 </ul>
             </div>
             <div class="clear"></div>

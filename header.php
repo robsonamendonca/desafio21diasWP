@@ -90,6 +90,9 @@ $url = get_stylesheet_directory_uri();
                             href="<?php echo home_url();?>/#about">Sobre</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
                             href="<?php echo home_url();?>/#contact">Contato</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                    href="<?php echo home_url();?>/cv_habilidades" target="_blank">Currículo</a></li>
+                            
                 </ul>
             </div>
         </div>
