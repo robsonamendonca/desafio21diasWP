@@ -10,7 +10,7 @@
  */
 
 get_header();
-
+if( have_posts() ) {
 while ( have_posts() ) {
     the_post(); ?>
 
@@ -21,29 +21,29 @@ while ( have_posts() ) {
         <div class="divider-custom-line"></div>
         <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
         <div class="divider-custom-line"></div>
-    </div>    
+    </div>
     <?php the_post_thumbnail('thumbnail', array('class' => 'img-fluid', 'style'=>'width:300px;'));?>
-    
+
     <div class="row">
-            <div class="col-lg-4 ml-auto">
-                <p class="lead"><?php the_content(); ?>
-                </p>
-            </div>
-            <div class="col-lg-4 mr-auto">
-                <p class="lead">
-                    <p class="categories">Categorias: <?php the_category(', ') ?></p>
-                    <?php if(has_tag()) { ?>
-                      <p class="tags">Palavras-chave: <?php the_tags(false, ', ') ?> </p>
-                    <?php } ?>
-                </p>
-            </div>
+        <div class="col-lg-4 ml-auto">
+            <p class="lead"><?php the_content(); ?>
+            </p>
+        </div>
+        <div class="col-lg-4 mr-auto">
+            <p class="lead">
+                <p class="categories">Categorias: <?php the_category(', ') ?></p>
+                <?php if(has_tag()) { ?>
+                <p class="tags">Palavras-chave: <?php the_tags(false, ', ') ?> </p>
+                <?php } ?>
+            </p>
+        </div>
     </div>
     <div class="text-center mt-4">
-            <a class="btn btn-xl btn-primary" href="javascript:window.history.go(-1);" >                
-                <i class="fa fa-arrow-left mr-2"></i>
-                Voltar!
-            </a>
-        </div>
+        <a class="btn btn-xl btn-primary" href="javascript:window.history.go(-1);">
+            <i class="fa fa-arrow-left mr-2"></i>
+            Voltar!
+        </a>
+    </div>
     <hr>
     <?php 
       //comentarios....
@@ -55,6 +55,20 @@ while ( have_posts() ) {
 </article>
 
 <?php
-}
+  }
+}//
+else{ ?>
+<div class="container" style="margin-top: 150px;">
+    <div style="text-align:right;cursor: pointer;" onclick="javascript:window.history.go(-1);">
+    <i class="fa fa-reply-all" aria-hidden="true"></i> Voltar
+    </div>
+</div>
+<hr />
+<div style="margin-top: 150px;" class="text-center mt-4 alert alert-danger" role="alert">
+    <p>Nenhum post encontrado!</p>
+</div>
+<?php           
+}//end if
+
 
 get_footer();

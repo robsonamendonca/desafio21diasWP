@@ -99,7 +99,13 @@ if($the_query_post->have_posts()){  ?>
 <?php
 }//
 else{ ?>
-<div class="text-center mt-4 alert alert-danger" role="alert">
+<div class="container" style="margin-top: 150px;">
+    <div style="text-align:right;cursor: pointer;" onclick="javascript:window.history.go(-1);">
+    <i class="fa fa-reply-all" aria-hidden="true"></i> Voltar
+    </div>
+</div>
+<hr />
+<div style="margin-top: 150px;" class="text-center mt-4 alert alert-danger" role="alert">
     <p>Nenhum post encontrado!</p>
 </div>
 <?php           

@@ -13,8 +13,9 @@ get_header();
 if( have_posts() ){
 ?>
 <div class="container" style="margin-top: 150px;">
-    <h2>Categorias</h2>  
-    <div style="text-align:right;cursor: pointer;" onclick="javascript:window.history.go(-1);"><i class="fa fa-reply-all" aria-hidden="true"></i> Voltar </div>
+    <h2>Resultado da Pesquisa por: <?php the_search_query();?></h2>
+    <div style="text-align:right;cursor: pointer;" onclick="javascript:window.history.go(-1);"><i
+            class="fa fa-reply-all" aria-hidden="true"></i> Voltar </div>
     <hr />
     <p>Digite algo no campo abaixo para pesquisar títulos ou conteúdos na página corrente:</p>
     <input class="form-control" id="txtbusca" type="text" placeholder="Pesquisa...">
@@ -74,16 +75,18 @@ if( have_posts() ){
 <?php
 }//
 else{ ?>
-<div class="container" style="margin-top: 150px;">    
+<div class="container" style="margin-top: 150px;">
+    <h2>Resultado da Pesquisa por: <?php the_search_query();?></h2>
     <div style="text-align:right;cursor: pointer;" onclick="javascript:window.history.go(-1);">
     <i class="fa fa-reply-all" aria-hidden="true"></i> Voltar
     </div>
 </div>
 <hr />
-<div class="text-center mt-4 alert alert-danger" role="alert">
+<div style="margin-top: 150px;" class="text-center mt-4 alert alert-danger" role="alert">
     <p>Nenhum post encontrado!</p>
 </div>
-<?php           
+    <?php           
 }//end if
+
 
 get_footer();
