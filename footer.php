@@ -84,6 +84,15 @@ $(document).ready(function() {
     });
 
 });
+//BUSCA
+function openSearch() {
+  document.getElementById("BuscaOverlay").style.display = "block";
+}
+
+function closeSearch() {
+  document.getElementById("BuscaOverlay").style.display = "none";
+}
+
 </script>
 
 </body>

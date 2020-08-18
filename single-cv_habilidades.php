@@ -101,7 +101,8 @@ endif;
 
 <head>
     <title>Robson Mendonça - Curriculum Vitae</title>
-
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="<?php echo $url;?>/assets/img/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content="Curriculum Vitae de Robson Mendonça." />
     <meta charset="UTF-8">
@@ -132,7 +133,9 @@ endif;
 
             <div id="contactDetails" class="quickFade delayFour">
                 <ul>
-					<li><a href="#" onclick="javascript:window.history.go(-1);"><< Voltar </a></li>
+                    <li><a href="#" onclick="javascript:window.history.go(-1);">
+                            << Voltar </a>
+                    </li>
                 </ul>
             </div>
             <div class="clear"></div>

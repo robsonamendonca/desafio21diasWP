@@ -32,7 +32,7 @@ $template_escolaridade='<article>
 
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args = array(
-    'posts_per_page'=> 10,
+    'posts_per_page'=> 100,
     'paged'  => $paged,
     'post_type'     => 'cv_habilidades'
 );
@@ -110,8 +110,9 @@ endif;
 
 <head>
     <!-- O título -->
-    <title><?php wp_title(''); ?></title>
-
+    <title>Robson Mendonça - Curriculum Vitae</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="<?php echo $url;?>/assets/img/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content="Curriculum Vitae de Robson Mendonça." />
     <!-- O charset padrão -->
