@@ -82,6 +82,9 @@ $(document).ready(function() {
     $('#per_page').on('change', function() {
         document.forms['frmper_page'].submit();
     });
+    
+    //ajustes na classe do menu dinamico!
+    $("#menu-menu_top > li > a").addClass("nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger");
 
 });
 //BUSCA

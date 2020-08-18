@@ -17,6 +17,15 @@ require_once get_template_directory() . '/custom_post_type/produtos.php';
 // Curriculo
 require_once get_template_directory() . '/custom_post_type/curriculo.php';
 
+// editar menu dinamico
+// Registrando um menu
+register_nav_menus(
+    array(
+        'meu_site' => __( 'Menu Site', 'meu-text-domain' )
+    )
+  ); 
+
+
 //escolher menu top admin na visualização
 add_filter('show_admin_bar','admin_bar_custom');
 function admin_bar_custom(){
