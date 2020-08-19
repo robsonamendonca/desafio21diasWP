@@ -19,6 +19,12 @@ require_once get_template_directory() . '/custom_post_type/curriculo.php';
 
 //shortcode: valida cpf
 require_once get_template_directory() . '/shortcode/validacpf.php';
+//shortcode: consulta mega sena
+require_once get_template_directory() . '/shortcode/loteria.php';
+//shortcode: consulta objetos do correis
+require_once get_template_directory() . '/shortcode/rastreador.php';
+//shortcode: consulta temperatura
+require_once get_template_directory() . '/shortcode/temperatura.php';
 
 // editar menu dinamico
 // Registrando um menu
@@ -52,7 +58,7 @@ add_action('register_shortcode_ui','shortcode_alunos_tornese');
 function shortcode_alunos_tornese(){
     shortcode_ui_register_for_shortcode('alunos_tornese',array(
         'label'=>'alunos tornese',
-        'listItemImage'=>'dashicons-list-view'
+        'listItemImage'=>'dashicons-welcome-learn-more'
     ));
 }
 

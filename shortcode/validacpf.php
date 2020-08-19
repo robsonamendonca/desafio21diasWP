@@ -1,6 +1,6 @@
 <?php
 //funcao tratamento
-function limpaCPF($valor){
+function SomenteNumeros($valor){
     $valor = preg_replace('/[^0-9]/', '', $valor);
     return $valor;
 }
@@ -14,7 +14,7 @@ function resultado_validacao_cpf_func( $atts ){
     if(!isset($_GET["cpf"])){
       return "";
     }else{
-        $cpf =  limpaCPF($_GET["cpf"]);
+        $cpf =  SomenteNumeros($_GET["cpf"]);
     }
     $response = file_get_contents("https://validar-cpf-spring-boot.herokuapp.com/validacpf?cpf=$cpf");
     $response = json_decode($response);
@@ -31,7 +31,7 @@ add_action('register_shortcode_ui','shortcode_resultado_validacao_cpf');
 function shortcode_resultado_validacao_cpf(){
     shortcode_ui_register_for_shortcode('resultado_validacao_cpf',array(
         'label'=>'Validador CPF Resultado',
-        'listItemImage'=>'dashicons-list-view'
+        'listItemImage'=>'dashicons-yes-alt'
     ));
 }
 
@@ -58,6 +58,6 @@ add_action('register_shortcode_ui','shortcode_form_validacao_cpf_func');
 function shortcode_form_validacao_cpf_func(){
     shortcode_ui_register_for_shortcode('form_validacao_cpf',array(
         'label'=>'Validador CPF Form',
-        'listItemImage'=>'dashicons-list-view'
+        'listItemImage'=>'dashicons-yes-alt'
     ));
 }
