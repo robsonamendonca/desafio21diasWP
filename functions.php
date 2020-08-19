@@ -10,12 +10,15 @@
  */
 
 add_theme_support( 'post-thumbnails' );
-//add_post_type_support( 'product','thumbnail' );
+add_post_type_support( 'product','thumbnail' );
 
 // Register Custom Post Type
 require_once get_template_directory() . '/custom_post_type/produtos.php';
 // Curriculo
 require_once get_template_directory() . '/custom_post_type/curriculo.php';
+
+//shortcode: valida cpf
+require_once get_template_directory() . '/shortcode/validacpf.php';
 
 // editar menu dinamico
 // Registrando um menu
